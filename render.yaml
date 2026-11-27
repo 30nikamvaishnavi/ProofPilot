@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: proofpilot
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: PROOFPILOT_API_KEY
+        sync: false

@@ -1,0 +1,74 @@
+{
+  "custom|no faults|on": {
+    "accuracy": 1.0,
+    "verified_rate": 1.0,
+    "wrong_but_verified": 0,
+    "mean_attempts": 1,
+    "retried": 0,
+    "p50_ms": 7.841100043151528,
+    "p95_ms": 77.65710004605353
+  },
+  "custom|no faults|off": {
+    "accuracy": 1.0,
+    "verified_rate": 0.0,
+    "wrong_but_verified": 0,
+    "mean_attempts": 1,
+    "retried": 0,
+    "p50_ms": 2.313349978066981,
+    "p95_ms": 20.61490004416555
+  },
+  "custom|30% injected faults|on": {
+    "accuracy": 0.984375,
+    "verified_rate": 0.984375,
+    "wrong_but_verified": 0,
+    "mean_attempts": 1.21875,
+    "retried": 13,
+    "p50_ms": 7.6492499792948365,
+    "p95_ms": 32.53480000421405
+  },
+  "custom|30% injected faults|off": {
+    "accuracy": 0.84375,
+    "verified_rate": 0.0,
+    "wrong_but_verified": 0,
+    "mean_attempts": 1,
+    "retried": 0,
+    "p50_ms": 2.5388000067323446,
+    "p95_ms": 14.977199956774712
+  },
+  "langgraph|no faults|on": {
+    "accuracy": 1.0,
+    "verified_rate": 1.0,
+    "wrong_but_verified": 0,
+    "mean_attempts": 1,
+    "retried": 0,
+    "p50_ms": 12.362950015813112,
+    "p95_ms": 29.3894000351429
+  },
+  "langgraph|no faults|off": {
+    "accuracy": 1.0,
+    "verified_rate": 0.0,
+    "wrong_but_verified": 0,
+    "mean_attempts": 1,
+    "retried": 0,
+    "p50_ms": 7.345699996221811,
+    "p95_ms": 22.358400048688054
+  },
+  "langgraph|30% injected faults|on": {
+    "accuracy": 0.984375,
+    "verified_rate": 0.984375,
+    "wrong_but_verified": 0,
+    "mean_attempts": 1.21875,
+    "retried": 13,
+    "p50_ms": 14.505050028674304,
+    "p95_ms": 38.840999943204224
+  },
+  "langgraph|30% injected faults|off": {
+    "accuracy": 0.84375,
+    "verified_rate": 0.0,
+    "wrong_but_verified": 0,
+    "mean_attempts": 1,
+    "retried": 0,
+    "p50_ms": 5.979100009426475,
+    "p95_ms": 17.833300051279366
+  }
+}

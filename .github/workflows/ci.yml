@@ -1,0 +1,30 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - run: pip install -r requirements-dev.txt && pip install -e .
+      - run: ruff check src tests eval
+      - run: mypy src
+      - run: pytest -q
+      - name: Evaluation (verifier on/off, with fault injection)
+        run: python -m eval.run_eval --fault-rate 0.3 --langgraph
+  docker:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t proofpilot .
+      - run: |
+          docker run -d -p 8000:8000 --name pp proofpilot
+          sleep 5
+          curl -fsS localhost:8000/health
